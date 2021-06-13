@@ -5,6 +5,7 @@ import ButtonCard from "../ButtonCard";
 import ButtonInsert from "../ButtonInsert";
 import CardContato from "../CardContatos"
 import Pagination from "../Pagination";
+import TelefoneButton from "../TelefoneButton";
 
 function TableCard() {
 
@@ -32,7 +33,7 @@ function TableCard() {
     return (
         <>
             <div className="container">
-                <ButtonInsert/>
+                <ButtonInsert />
                 <Pagination page={page} onPageChange={changePage} />
                 <div className="table-responsive">
                     <table className="table table-striped">
@@ -48,13 +49,16 @@ function TableCard() {
                                 <tr key={item.id}>
                                     <td>{item.nome}</td>
                                     <td>{item.telefone.map(telefone => (
-                                        <p>({telefone.ddd}) {telefone.telefone}</p>
+                                        <p key={telefone.id}>({telefone.ddd}) {telefone.telefone}</p>
                                     ))}</td>
                                     <td>{item.endereco.map(endereco => (
-                                        <p>{endereco.rua} {endereco.bairro} {endereco.cidade}</p>
+                                        <p  key={endereco.id}>{endereco.rua} {endereco.bairro} {endereco.cidade}</p>
                                     ))}</td>
                                     <td>
-                                    <ButtonCard/>
+                                        <ButtonCard />
+                                    </td>
+                                    <td>
+                                        <TelefoneButton idUsuario={item.id}/>
                                     </td>
                                 </tr>
                             ))}
