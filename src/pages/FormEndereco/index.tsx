@@ -2,25 +2,25 @@ import Footer from "../../compontents/Footer"
 import NavBar from "../../compontents/NavBar"
 import { useParams } from 'react-router-dom'
 import CardNomeContato from "../../compontents/CardNomeContato";
-import TelefoneForm from "../../compontents/TelefoneForm";
-import TableTelefone from "../../compontents/TableTelefone";
+import TableEndereco from "../../compontents/TableEndereco";
+import EnderecoForm from "../../compontents/EnderecoForm";
 
 type UserId = {
     id: string;
-  };
+};
 
-function FormTelefone(){
+function FormEndereco() {
     const { id } = useParams<UserId>();
     let index = id.replace("id=", "")
-    
+
     return (
         <>
-            <NavBar/>
-            <CardNomeContato idUsuario={id}/>
-            <TelefoneForm/>
-            <TableTelefone idUsuario={id}/>
-            <Footer/>
+            <NavBar />
+            <CardNomeContato idUsuario={id} />
+            <EnderecoForm />
+            <TableEndereco idUsuario={id} />
+            <Footer />
         </>
     )
 }
-export default FormTelefone
+export default FormEndereco

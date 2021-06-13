@@ -4,15 +4,16 @@ type Props = {
     idUsuario: number;
 }
 
-function TelefoneButton(idUsuario : Props){
-    var link = `/formTelefone/${idUsuario.idUsuario}`
+
+function EnderecoButton(idUsuario : Props){
+    var link = `/formEndereco/${idUsuario.idUsuario}`
     return(
         
         <button type="button" className="btn btn-success">
         <Link to={link}>
-            Telefone
+            Endereco
         </Link>
     </button>
     )
 }
-export default TelefoneButton
+export default EnderecoButton

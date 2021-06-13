@@ -5,5 +5,6 @@ export type Endereco = {
     rua: string,
     bairro: string,
     numero: number,
+    estado: string,
     complemento: string
 }

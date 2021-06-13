@@ -1,10 +1,10 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
-import { Contato, ContatoPage } from "../../types/contatos";
+import { ContatoPage } from "../../types/contatos";
 import ButtonCard from "../ButtonCard";
 import ButtonInsert from "../ButtonInsert";
-import CardContato from "../CardContatos"
 import Pagination from "../Pagination";
+import EnderecoButton from "../EnderecoButton";
 import TelefoneButton from "../TelefoneButton";
 
 function TableCard() {
@@ -58,8 +58,12 @@ function TableCard() {
                                         <ButtonCard />
                                     </td>
                                     <td>
+                                        <EnderecoButton idUsuario={item.id}/>
+                                    </td>
+                                    <td>
                                         <TelefoneButton idUsuario={item.id}/>
                                     </td>
+
                                 </tr>
                             ))}
                         </tbody>

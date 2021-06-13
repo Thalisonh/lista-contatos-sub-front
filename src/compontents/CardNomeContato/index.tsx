@@ -1,7 +1,6 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 import { Contato } from "../../types/contatos";
-import EnderecoForm from "../EnderecoForm";
 
 type Props = {
     idUsuario: string;
@@ -23,8 +22,10 @@ function CardNomeContato(idUsuario : Props){
 
     return(
         <>
+        <div className="container">
             <h1>{contato?.nome}</h1>
-            <EnderecoForm/>
+        </div>
+            {/* <EnderecoForm/> */}
         </>
     )
 }

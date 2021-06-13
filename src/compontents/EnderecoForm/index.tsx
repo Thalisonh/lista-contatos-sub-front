@@ -1,8 +1,8 @@
 import axios from 'axios';
 import React, { useState } from 'react';
+import ButtonCadastrar from '../ButtonCadastrar';
 
 class EnderecoForm extends React.Component {
-
     state = {
         cep: '',
         estado: '',
@@ -19,7 +19,7 @@ class EnderecoForm extends React.Component {
 
     handleSubmit = (event: any) => {
 
-        axios.post(`http://localhost:8080/contatos`, {
+        axios.put(`http://localhost:8080/enderecos/id=1`, {
             cep: this.state.cep,
             estado: this.state.estado,
             cidade: this.state.cidade,
@@ -36,37 +36,35 @@ class EnderecoForm extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="container">
                 <form onSubmit={this.handleSubmit}>
                     <div className="container row g-3">
                         <div className="col-md-4">
                             <label className="form-label">CEP</label>
-                            <input type="text" className="form-control" name="cep"  onChange={this.handleChange} />
+                            <input type="text" className="form-control" name="cep" onChange={this.handleChange} />
                         </div>
                         <div className="col-md-4">
                             <label className="form-label">Cidade</label>
-                            <input type="text" className="form-control" name="cidade"  onChange={this.handleChange} />
+                            <input type="text" className="form-control" name="cidade" onChange={this.handleChange} />
                         </div>
                         <div className="col-md-4">
                             <label className="form-label">Bairro</label>
-                            <input type="text" className="form-control" name="bairro"  onChange={this.handleChange} />
+                            <input type="text" className="form-control" name="bairro" onChange={this.handleChange} />
                         </div>
                         <div className="col-md-6">
                             <label className="form-label">Rua</label>
-                            <input type="text" className="form-control" name="rua"  onChange={this.handleChange} />
+                            <input type="text" className="form-control" name="rua" onChange={this.handleChange} />
                         </div>
                         <div className="col-md-2">
                             <label className="form-label">Numero</label>
-                            <input type="text" className="form-control" name="numero"  onChange={this.handleChange} />
+                            <input type="text" className="form-control" name="numero" onChange={this.handleChange} />
                         </div>
                         <div className="col-md-4">
                             <label className="form-label">Complemento</label>
-                            <input type="text" className="form-control" name="complemento"  onChange={this.handleChange} />
+                            <input type="text" className="form-control" name="complemento" onChange={this.handleChange} />
                         </div>
                     </div>
-                    <button type="submit">
-                        Adicionar
-                    </button>
+                    <ButtonCadastrar/>
                 </form>
             </div>
         )
