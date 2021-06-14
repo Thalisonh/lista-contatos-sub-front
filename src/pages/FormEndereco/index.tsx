@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom'
 import CardNomeContato from "../../compontents/CardNomeContato";
 import TableEndereco from "../../compontents/TableEndereco";
 import EnderecoForm from "../../compontents/EnderecoForm";
+import EnderecoForm2 from "../../compontents/EnderecoForm2";
 
 type UserId = {
     id: string;
@@ -17,7 +18,7 @@ function FormEndereco() {
         <>
             <NavBar />
             <CardNomeContato idUsuario={id} />
-            <EnderecoForm />
+            <EnderecoForm2 idUsuario={id}/>
             <TableEndereco idUsuario={id} />
             <Footer />
         </>

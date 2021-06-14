@@ -1,8 +1,9 @@
 import axios from 'axios';
-import React, { useState } from 'react';
+import React from 'react';
 import ButtonCadastrar from '../ButtonCadastrar';
 
 class EnderecoForm extends React.Component {
+
     state = {
         cep: '',
         estado: '',
@@ -19,7 +20,7 @@ class EnderecoForm extends React.Component {
 
     handleSubmit = (event: any) => {
 
-        axios.put(`http://localhost:8080/enderecos/id=1`, {
+        axios.put(`http://localhost:8080/enderecos/id=`, {
             cep: this.state.cep,
             estado: this.state.estado,
             cidade: this.state.cidade,

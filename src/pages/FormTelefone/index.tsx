@@ -17,7 +17,7 @@ function FormTelefone(){
         <>
             <NavBar/>
             <CardNomeContato idUsuario={id}/>
-            <TelefoneForm/>
+            <TelefoneForm idUsuario={id}/>
             <TableTelefone idUsuario={id}/>
             <Footer/>
         </>
